@@ -1,9 +1,7 @@
-public class Weapon
+public class Weapon extends Item
 {
-    protected String name;
     protected char type;
-    protected int value;
-    protected int[] damage = new int[2];
+    protected int damage;
     protected char damType;
     protected int attribute;
     
@@ -12,18 +10,6 @@ public class Weapon
     }
     
     //Getters and Setters
-    /**
-     * Name
-     */
-    public String getName()
-    {
-        return name;
-    }
-    public void setName(String n)
-    {
-        name = n;
-    }
-    
     /**
      * Type
      */
@@ -37,27 +23,15 @@ public class Weapon
     }
     
     /**
-     * Value
-     */
-    public int getValue()
-    {
-        return value;
-    }
-    public void setValue(int v)
-    {
-        value = v;
-    }
-    
-    /**
      * Damage
      */
-    public int getDamage(int i)
+    public int getDamage()
     {
-        return damage[i];
+        return damage;
     }
-    public void setDamage(int i, int d)
+    public void setDamage(int d)
     {
-        damage[i] = d;
+        damage = d;
     }
     
     /**
@@ -79,7 +53,7 @@ public class Weapon
     {
         return attribute;
     }
-    public void setType(int a)
+    public void setAtt(int a)
     {
         attribute = a;
     }

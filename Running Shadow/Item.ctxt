@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Item
+comment1.params=
+comment1.target=java.lang.String\ getName()
+comment1.text=\r\n\ Name\r\n
+comment2.params=n
+comment2.target=void\ setName(java.lang.String)
+comment3.params=
+comment3.target=int\ getValue()
+comment3.text=\r\n\ Value\r\n
+comment4.params=v
+comment4.target=void\ setValue(int)
+numComments=5
