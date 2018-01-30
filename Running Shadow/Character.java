@@ -1,13 +1,13 @@
 public class Character
 {
     protected String name;
-    protected int[] attributes = new int[7]; //STR, AGI, REA, GRT, WIT, WIL, CHA
+    protected int[] attributes = new int[7]; //STR, AGI, REA, GRT, WIT, INT, CHA
+    protected int[] weaponSkills = new int[4]; //Pistols, longarms, melee, unarmed
     
     //Constructors
     public Character()
     {
     }
-    
     public Character(String n, int s, int a, int r, int g, int i, int w, int c)
     {
         name = n;
@@ -20,6 +20,7 @@ public class Character
         attributes[6] = c;
     }
     
+    //Methods
     public boolean check(int thr, int att, int adv, int bonus)
     {
         boolean succeed = false;
@@ -44,6 +45,11 @@ public class Character
             succeed = true;
         }
         return succeed;
+    }
+    
+    public void attack(Character a, Character d, Weapon w)
+    {
+        a.check((d.getAtt(2) + d.getAtt(5)), w.getAtt(), 0, 0);
     }
     
     //Getters and Setters
