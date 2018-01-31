@@ -1,7 +1,9 @@
 public abstract class Item
 {
     protected String name;
+    protected String desc;
     protected int value;
+    protected int id;
         
     //Getters and Setters
     /**
@@ -17,6 +19,18 @@ public abstract class Item
     }
     
     /**
+     * Description
+     */
+    public String getDesc()
+    {
+        return desc;
+    }
+    public void setDesc(String d)
+    {
+        desc = d;
+    }
+    
+    /**
      * Value
      */
     public int getValue()
@@ -26,5 +40,17 @@ public abstract class Item
     public void setValue(int v)
     {
         value = v;
+    }
+    
+    /**
+     * ID
+     */
+    public int getId()
+    {
+        return id;
+    }
+    public void setId(int i)
+    {
+        id = i;
     }
 }

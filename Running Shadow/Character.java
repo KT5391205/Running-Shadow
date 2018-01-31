@@ -23,9 +23,15 @@ public class Character
         attributes[4] = i;
         attributes[5] = g;
         attributes[6] = c;
+        hpInit();
     }
     
     //Methods
+    public void hpInit()
+    {
+        hp = level * ((int)(getAtt(5) / 2)) + getAtt(0);
+    }
+    
     public boolean check(int thr, int att, int adv, int bonus)
     {
         boolean succeed = false;
@@ -87,6 +93,7 @@ public class Character
     public void levelUp()
     {
         level++;
+        hpInit();
     }
     
     public void countXp()
