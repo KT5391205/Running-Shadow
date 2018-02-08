@@ -9,6 +9,7 @@ public class Character
     protected int xp;
     protected int level;
     
+    
     //Constructors
     public Character()
     {
