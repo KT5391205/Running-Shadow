@@ -4,7 +4,7 @@ public abstract class Item
     protected String desc;
     protected int value;
     protected int id;
-        
+    
     //Getters and Setters
     /**
      * Name

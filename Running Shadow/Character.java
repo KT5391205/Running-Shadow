@@ -1,4 +1,4 @@
-public class Character
+public abstract class Character
 {
     protected String name;
     protected int[] attributes = new int[7]; //BOD, STR, AGI, REA, WIT, GRT, CHA
