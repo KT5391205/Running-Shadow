@@ -9,19 +9,18 @@ public abstract class Character
     protected int xp;
     protected int level;
     
-    
     //Constructors
     public Character()
     {
     }
-    public Character(String n, int b, int s, int a, int r, int i, int g, int c)
+    public Character(String n, int b, int s, int a, int r, int w, int g, int c)
     {
         name = n;
         attributes[0] = b;
         attributes[1] = s;
         attributes[2] = a;
         attributes[3] = r;
-        attributes[4] = i;
+        attributes[4] = w;
         attributes[5] = g;
         attributes[6] = c;
         hpInit();
