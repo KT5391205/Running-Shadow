@@ -16,7 +16,7 @@ public class WeaponList
         //Hunting Rifle
         Weapon rifle = new Weapon();
         rifle.setName("HUNTING RIFLE");
-        rifle.setDesc("a bolt action rifle with a wooden stock used for killing large game");
+        rifle.setDesc("a bolt action rifle with a wooden stock used for killing babies");
         sixer.setId(1002);
         rifle.setValue(300);
         rifle.setType('l');
@@ -28,12 +28,23 @@ public class WeaponList
         Weapon saber = new Weapon();
         saber.setName("SABER");
         saber.setDesc("a long, thin blade used by Union soldiers in close-quarters combat");
-        sixer.setId(1003);
+        saber.setId(1003);
         saber.setValue(130);
         saber.setType('m');
         saber.setDamage(6);
         saber.setDamType('s');
         saber.setAtt(1);
+        
+        //Stick
+        Weapon stick = new Weapon();
+        stick.setName("STICK");
+        stick.setDesc("a wooden twig");
+        stick.setId(1000);
+        stick.setValue(-1);
+        stick.setType('m');
+        stick.setDamage(1);
+        stick.setDamType('b');
+        stick.setAtt(1);
         
         //Dragon Slayer
         Weapon dragonSlayer = new Weapon();
