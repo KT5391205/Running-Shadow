@@ -2,10 +2,10 @@
 dependency1.from=ItemList
 dependency1.to=MiscItem
 dependency1.type=UsesDependency
-dependency2.from=Character
+dependency2.from=WeaponList
 dependency2.to=Weapon
 dependency2.type=UsesDependency
-dependency3.from=WeaponList
+dependency3.from=Character
 dependency3.to=Weapon
 dependency3.type=UsesDependency
 dependency4.from=CharCreate

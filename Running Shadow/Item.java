@@ -5,6 +5,11 @@ public abstract class Item
     protected int value;
     protected int id;
     
+    //Methods
+    public void inspect()
+    {
+        System.out.println(getName() + " is " + getDesc() + ".");
+    }
     //Getters and Setters
     /**
      * Name
