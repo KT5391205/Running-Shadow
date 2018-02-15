@@ -6,19 +6,27 @@ public class CharCreate
     public static void nameSelect()
     {
         String response = "";
-        try
-        {
-            while(response.equals(""))
+        while(response.equals("")){
+            try
             {
                 System.out.println("What is your name?");
                 response = scanner.next();
             }
-            if(response.length() > 12 || response.length() < 2)
+            catch(Exception e)
             {
-                System.out.println("That name is not of a sufficient length.");
-                nameSelect();
+                System.out.println("That is not an acceptable name.");
+                response = "";
             }
         }
-        catch(Exception e){}
+        if(response.length() > 12 || response.length() < 2)
+        {
+            System.out.println("That name is not of a sufficient length.");
+            nameSelect();
+        }
+    }
+    
+    public static void attributeSelect()
+    {
+        
     }
 }
