@@ -4,6 +4,9 @@ public class Weapon extends Item
     protected int damage;
     protected char damType;
     protected int attribute;
+    protected int range;
+    protected boolean ammo;
+    protected Ammunition ammoType;
     
     public Weapon()
     {
@@ -56,5 +59,41 @@ public class Weapon extends Item
     public void setAtt(int a)
     {
         attribute = a;
+    }
+    
+    /**
+     * Range
+     */
+    public int getRange()
+    {
+        return range;
+    }
+    public void setRange(int r)
+    {
+        range = r;
+    }
+    
+    /**
+     * Ammunition
+     */
+    public boolean getAmmo()
+    {
+        return ammo;
+    }
+    public void setAmmo(boolean a)
+    {
+        ammo = a;
+    }
+    
+    /**
+     * Ammunition Type
+     */
+    public Ammunition getAmmoType()
+    {
+        return ammoType;
+    }
+    public void setAmmoType(Ammunition a)
+    {
+        ammoType = a;
     }
 }

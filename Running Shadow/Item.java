@@ -5,6 +5,10 @@ public abstract class Item
     protected int value;
     protected int id;
     
+    public Item()
+    {
+    }
+    
     //Methods
     public void inspect()
     {

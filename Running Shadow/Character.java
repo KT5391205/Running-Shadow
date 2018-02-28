@@ -1,13 +1,14 @@
 public abstract class Character
 {
     protected String name;
-    protected int[] attributes = new int[7]; //BOD, STR, AGI, REA, WIT, GRT, CHA
+    protected int[] attributes = {1, 1, 1, 1, 1, 1, 1}; //BOD, STR, AGI, REA, WIT, GRT, CHA
     protected int[] weaponSkills = new int[4]; //Pistols, longarms, melee, unarmed
     protected int[] skills = new int[10];
     //Endurance (BOD), Athletics (STR), Sleight of Hand (AGI), Stealth (AGI), Perception (WIT), Willpower (GRT), Convince (CHA), Intimidate (CHA)
     protected int hp;
     protected int xp;
     protected int level;
+    protected Weapon equippedWep;
     
     //Constructors
     public Character()
@@ -58,7 +59,7 @@ public abstract class Character
         return succeed;
     }
     
-    public int dealDamage(int att, int adv, int bonus)
+    public int takeDamage(int att, int adv, int bonus)
     {
         int damage = 0;
         for(int i = 0; i < (att + adv); i++)
@@ -80,7 +81,7 @@ public abstract class Character
         boolean hit = a.check(defense, w.getAtt(), 0, 0);
         if(hit)
         {
-            damage = a.dealDamage(w.getAtt(), 0, 0);
+            damage = a.takeDamage(w.getAtt(), 0, 0);
         }
         damage -= d.getAtt(0);
         if(damage < 1)
@@ -120,6 +121,10 @@ public abstract class Character
     /**
      * Attributes
      */
+    public int[] getAtts()
+    {
+        return attributes;
+    }
     public int getAtt(int a)
     {
         return attributes[a];
@@ -183,5 +188,17 @@ public abstract class Character
     public void setLevel(int l)
     {
         level = l;
+    }
+    
+    /**
+     * Equipped Weapon
+     */
+    public Weapon getWep()
+    {
+        return equippedWep;
+    }
+    public void setWep(Weapon w)
+    {
+        equippedWep = w;
     }
 }

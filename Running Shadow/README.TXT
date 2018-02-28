@@ -1,3 +1,4 @@
 Object IDs:
-- Weapons: 1000-1999
+- Weapons: 1000-1499
+  - Ammunition: 1500-1999
 - MiscItems 2000-2999
