@@ -156,7 +156,7 @@ public class CharCreate
             }
             catch(Exception e)
             {
-                
+                System.out.println("That is not an acceptable response.");
             }
         }
     }
