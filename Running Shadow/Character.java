@@ -1,3 +1,4 @@
+import java.lang.Math;
 public abstract class Character
 {
     protected String name;
@@ -59,6 +60,11 @@ public abstract class Character
         return succeed;
     }
     
+    public void dmg(int d)
+    {
+        setHp(getHp() - d);
+    }
+    
     public int takeDamage(int att, int adv, int bonus)
     {
         int damage = 0;
@@ -88,7 +94,12 @@ public abstract class Character
         {
             damage = 1;
         }
-        d.hp -= damage;
+        d.dmg(damage);
+        double rand = Math.random() * 20;
+        if(rand > 19.00)
+        {
+            d.dmg(damage);
+        }
     }
     
     public void levelUp()
