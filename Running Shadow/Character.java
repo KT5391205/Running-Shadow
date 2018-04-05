@@ -95,11 +95,6 @@ public abstract class Character
             damage = 1;
         }
         d.dmg(damage);
-        double rand = Math.random() * 20;
-        if(rand > 19.00)
-        {
-            d.dmg(damage);
-        }
     }
     
     public void levelUp()
