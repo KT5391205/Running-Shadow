@@ -22,7 +22,8 @@ public class CharCreate
         }
         if(response.length() > 12 || response.length() < 2)
         {
-            System.out.println("That name is not of a sufficient length.");
+            System.out.println("That name is not of a sufficient length.\n"
+                + "Your name must be longer than 2 characters, and shorter than 12.");
             nameSelect();
         }
         int confirm = 0;
