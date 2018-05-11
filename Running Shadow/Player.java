@@ -3,6 +3,9 @@ public class Player extends Character
 {
     private Scanner scanner = new Scanner(System.in);
     private String[] atts = {"BOD", "STR", "AGI", "REA", "WIT", "GRT", "CHA"};
+    
+    Player pc = new Player();
+    
     public void nameSelect()
     {
         String name = "";
@@ -104,7 +107,21 @@ public class Player extends Character
         {
             try
             {
-                
+                if(pc.getAtt(a) + value > 6 || pc.getAtt(a) + value < 1)
+                {
+                    System.out.println("Your attribute values cannot exceed six or be lower than one.");
+                    attributeChange(a);
+                }
+                int totalAtts = 0;
+                for(int i : pc.getAtts())
+                {
+                    totalAtts += i;
+                }
+                if(totalAtts > 28)
+                {
+                    System.out.println("The sum of your attribute values cannot exceed twenty four.");
+                }
+                pc.setAtt
             }
             catch(Exception e)
             {
