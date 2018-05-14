@@ -4,7 +4,9 @@ public class Player extends Character
     private Scanner scanner = new Scanner(System.in);
     private String[] atts = {"BOD", "STR", "AGI", "REA", "WIT", "GRT", "CHA"};
     
-    Player pc = new Player();
+    public Player()
+    {
+    }
     
     public void nameSelect()
     {
@@ -15,7 +17,6 @@ public class Player extends Character
             {
                 System.out.println("What is your name?");
                 name = scanner.next();
-                System.out.println("Your name is " + name + "?");
             }
             catch(Exception e)
             {
@@ -26,6 +27,27 @@ public class Player extends Character
         if(name.length() < 3 || name.length() > 12)
         {
             System.out.println("Your name must be longer than 3 characters, but less than 12.");
+            nameSelect();
+        }
+        int confirm = 0;
+        while(confirm != 1 && confirm != 2)
+        {
+            try
+            {
+                System.out.println("Your name is " + name + "?\n"
+                    + "[1]: Yes\n"
+                    + "[2]: No");
+                confirm = scanner.nextInt();
+            }
+            catch(Exception e)
+            {
+                System.out.println("That is not an acceptable response.");
+                nameSelect();
+            }
+        }
+        if(confirm == 2)
+        {
+            nameSelect();
         }
     }
     public void attributeSelect()
@@ -107,13 +129,14 @@ public class Player extends Character
         {
             try
             {
-                if(pc.getAtt(a) + value > 6 || pc.getAtt(a) + value < 1)
+                System.out.println()
+                if(getAtt(a) + value > 6 || getAtt(a) + value < 1)
                 {
                     System.out.println("Your attribute values cannot exceed six or be lower than one.");
                     attributeChange(a);
                 }
                 int totalAtts = 0;
-                for(int i : pc.getAtts())
+                for(int i : getAtts())
                 {
                     totalAtts += i;
                 }
@@ -121,10 +144,12 @@ public class Player extends Character
                 {
                     System.out.println("The sum of your attribute values cannot exceed twenty four.");
                 }
-                pc.setAtt
+                setAtt(a, getAtt(a) + value);
             }
             catch(Exception e)
             {
+                System.out.println("That is not an acceptable response.");
+                attributeChange(a);
             }
         }
     }

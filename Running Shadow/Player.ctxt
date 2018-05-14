@@ -1,9 +1,11 @@
 #BlueJ class context
 comment0.target=Player
 comment1.params=
-comment1.target=void\ nameSelect()
+comment1.target=Player()
 comment2.params=
-comment2.target=void\ attributeSelect()
-comment3.params=a
-comment3.target=void\ attributeChange(int)
-numComments=4
+comment2.target=void\ nameSelect()
+comment3.params=
+comment3.target=void\ attributeSelect()
+comment4.params=a
+comment4.target=void\ attributeChange(int)
+numComments=5
