@@ -49,6 +49,7 @@ public class Player extends Character
         {
             nameSelect();
         }
+        setName(name);
     }
     public void attributeSelect()
     {
@@ -66,8 +67,8 @@ public class Player extends Character
                     + "GRT: " + getAtt(5) + "\n"
                     + "CHA: " + getAtt(6) + "\n");
                 System.out.println("Would you like to change one of your attributes?\n"
-                    + "[1]: Yes.\n"
-                    + "[2]: No.");
+                    + "[1]: Yes\n"
+                    + "[2]: No");
                 response = scanner.nextInt();
             }
             catch(Exception e)
@@ -84,11 +85,11 @@ public class Player extends Character
                 try
                 {
                     System.out.println("Are you sure you're finished?");
+                    confirm = scanner.nextInt();
                 }
                 catch(Exception e)
                 {
                     System.out.println("That is not an acceptable response.");
-                    attributeSelect();
                 }
             }
             if(confirm == 2)
@@ -103,7 +104,7 @@ public class Player extends Character
             {
                 try
                 {
-                    System.out.println("Which attribute would you like to cahnge?\n"
+                    System.out.println("Which attribute would you like to change?\n"
                         + "[1]: BOD\n"
                         + "[2]: STR\n"
                         + "[3]: AGI\n"
@@ -116,7 +117,6 @@ public class Player extends Character
                 catch(Exception e)
                 {
                     System.out.println("That is not an acceptable response.");
-                    attributeSelect();
                 }
             }
             attributeChange(attribute - 1);
@@ -129,22 +129,13 @@ public class Player extends Character
         {
             try
             {
-                System.out.println()
+                System.out.println("By how much would you like to change your " + atts[a] + "?");
+                value = scanner.nextInt();
                 if(getAtt(a) + value > 6 || getAtt(a) + value < 1)
                 {
                     System.out.println("Your attribute values cannot exceed six or be lower than one.");
                     attributeChange(a);
                 }
-                int totalAtts = 0;
-                for(int i : getAtts())
-                {
-                    totalAtts += i;
-                }
-                if(totalAtts > 28)
-                {
-                    System.out.println("The sum of your attribute values cannot exceed twenty four.");
-                }
-                setAtt(a, getAtt(a) + value);
             }
             catch(Exception e)
             {
@@ -152,5 +143,6 @@ public class Player extends Character
                 attributeChange(a);
             }
         }
+        setAtt(a, getAtt(a) + value);
     }
 }
