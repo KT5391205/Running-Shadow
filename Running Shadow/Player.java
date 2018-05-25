@@ -3,11 +3,12 @@ public class Player extends Character
 {
     private Scanner scanner = new Scanner(System.in);
     private String[] atts = {"BOD", "STR", "AGI", "REA", "WIT", "GRT", "CHA"};
-    
+
     public Player()
     {
+
     }
-    
+
     public void nameSelect()
     {
         String name = "";
@@ -51,6 +52,7 @@ public class Player extends Character
         }
         setName(name);
     }
+
     public void attributeSelect()
     {
         int response = 0;
@@ -84,7 +86,9 @@ public class Player extends Character
             {
                 try
                 {
-                    System.out.println("Are you sure you're finished?");
+                    System.out.println("Are you sure you're finished?\n"
+                        + "[1]: Yes\n"
+                        + "[2]: No");
                     confirm = scanner.nextInt();
                 }
                 catch(Exception e)
@@ -122,27 +126,38 @@ public class Player extends Character
             attributeChange(attribute - 1);
         }
     }
+
     public void attributeChange(int a)
     {
         int value = -1;
-        while(value < 0)
+        try
         {
-            try
+            System.out.println("By how much would you like to change your " + atts[a] + "?");
+            value = scanner.nextInt();
+            int total = 0;
+            for(int i : getAtts())
             {
-                System.out.println("By how much would you like to change your " + atts[a] + "?");
-                value = scanner.nextInt();
-                if(getAtt(a) + value > 6 || getAtt(a) + value < 1)
-                {
-                    System.out.println("Your attribute values cannot exceed six or be lower than one.");
-                    attributeChange(a);
-                }
+                total += i;
             }
-            catch(Exception e)
+            if(getAtt(a) + value > 6 || getAtt(a) + value < 1)
             {
-                System.out.println("That is not an acceptable response.");
+                System.out.println("Your attribute values cannot exceed six or be lower than one.");
                 attributeChange(a);
             }
+            else if(total + value > 21)
+            {
+                System.out.println("The sum of all your attribute values cannot exceed 28.");
+                attributeChange(a);
+            }
+            else
+            {
+                setAtt(a, getAtt(a) + value);
+            }
         }
-        setAtt(a, getAtt(a) + value);
+        catch(Exception e)
+        {
+            System.out.println("That is not an acceptable response.");
+            attributeChange(a);
+        }
     }
 }
